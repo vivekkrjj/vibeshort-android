@@ -1,70 +1,33 @@
-
-Repository navigation
-Code
-Issues
-Pull requests
-Agents
-Actions
-Projects
-Wiki
-Security and quality
-Insights
-Settings
-Files
-Go to file
-t
-T
-.github/workflows
-build-apk.yml
-app
-ANDROID_BUILD.txt
-build.gradle
-settings.gradle
-vibeshort-android/.github/workflows
-/build-apk.yml
-vivekkrjj
-vivekkrjj
-Add GitHub Actions workflow to build APK
-94fa41f
- · 
-13 minutes ago
-vibeshort-android/.github/workflows
-/build-apk.yml
-
-Code
-
-Blame
-33 lines (26 loc) · 668 Bytes
 name: Build VibeShort APK
 
 on:
   workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
 
-      - name: Set up Gradle
-        uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v4
 
       - name: Build Release APK
         run: gradle :app:assembleRelease
+
+      - name: Find APK
+        run: find . -type f -name "*.apk" -print
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: VibeShort-release-apk
-          path: app/build/outputs/apk/release/app-release.apk
+          path: "**/*.apk"
+          if-no-files-found: error
