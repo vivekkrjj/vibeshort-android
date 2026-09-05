@@ -1,4 +1,0 @@
-plugins { id "com.android.application" }
-android { namespace "com.vibeshort.app"; compileSdk 35
- defaultConfig { applicationId "com.vibeshort.app"; minSdk 23; targetSdk 35; versionCode 18; versionName "18.0" }
-}
