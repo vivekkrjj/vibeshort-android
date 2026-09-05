@@ -20,7 +20,7 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
 
       - name: Build Release APK
-        run: gradle :app:assembleRelease
+        run: gradle :app:assembleDebug
 
       - name: Find APK
         run: find . -type f -name "*.apk" -print
