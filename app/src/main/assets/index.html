@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>VibeShort V18</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand">VibeShort <span>V15</span></div>
+    <div class="top-actions">
+      <button id="loginBtn" class="topbtn">⌕ Login</button>
+      <button id="profileBtn" class="topbtn">Profile</button>
+      <button id="notifyBtn" class="topbtn">🔔</button>
+      <button id="setupBtn" class="topbtn">Setup</button>
+    </div>
+  </header>
+
+  <main id="feed" class="feed" aria-label="Short video feed"></main>
+  <button id="soundToggle" class="sound-toggle" title="Toggle sound" aria-label="Toggle sound">🔇</button>
+  <button id="soundUnlock" class="sound-unlock">🔊 Tap to enable sound & autoplay</button>
+
+  <div id="toast" class="toast"></div>
+
+  <nav class="bottomnav">
+    <button class="navbtn active" data-nav="for-you">⌂<small>For You</small></button>
+    <button class="navbtn" data-nav="following">♡<small>Following</small></button>
+    <button class="navbtn" data-nav="upload">＋<small>Upload</small></button>
+    <button class="navbtn" data-nav="search">⌕<small>Search</small></button>
+  </nav>
+</div>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-card">
+    <button id="modalClose" class="close">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+</body>
+</html>

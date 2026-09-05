@@ -1,0 +1,6 @@
+VibeShort Android project
+1. Open this folder in Android Studio.
+2. Let Gradle sync.
+3. Build > Build APK(s).
+4. Install the generated APK on an Android phone.
+Internet permission is already included. WebView media playback is configured to allow autoplay where Android permits it.
